@@ -1,0 +1,686 @@
+@import "_media";
+
+$color-gray: #191919;
+$color-dark: #000000;
+$color-white: #ffffff;
+$color-accent: #118da8;
+$border-radius: 32px;
+$border-radius-medium: 12px;
+$border-radius-small: 6px;
+$input-height: 82px;
+$container-padding-y: 50px;
+$button-height: 51px;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: $color-gray;
+  color: $color-white;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  padding-inline: $container-padding-y;
+}
+
+.button {
+  height: $button-height;
+  color: $color-white;
+  background-color: $color-accent;
+  padding-left: 20px;
+  padding-right: 15px;
+  border-radius: $border-radius-small;
+  font-size: 17px;
+  line-height: 27px;
+  transform: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #004251;
+  }
+}
+
+.header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 43px;
+
+    @include tablet {
+      padding-block: 22px;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      gap: 40px;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-link {
+      color: $color-white;
+      transition: color 0.4s ease;
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+.hero {
+  &__body {
+    padding-top: 40px;
+    display: flex;
+
+    @include mobile {
+      padding-bottom: 20px;
+      position: relative;
+      background-image: url(./../images/hero.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: $border-radius-medium;
+    }
+  }
+
+  &__image {
+    border-radius: $border-radius-medium;
+
+    &-wrapper {
+      position: relative;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__lines {
+    position: absolute;
+    top: -26px;
+    left: -26px;
+  }
+
+  &__info {
+    margin: 131px 60px;
+    padding-top: 163px;
+    max-width: 530px;
+
+    @include desktop {
+      padding-top: 120px;
+    }
+
+    @include tablet {
+      padding-top: 20px;
+      margin: 0 0 0 60px;
+    }
+
+    @include mobile {
+      margin: 0 60px 0 60px;
+    }
+
+    &-title {
+      font-size: 70px;
+      line-height: 88px;
+      letter-spacing: 3.2px;
+
+      @include tablet {
+        font-size: 65px;
+        line-height: 65px;
+      }
+    }
+
+    &-subtitle {
+      font-size: 75px;
+      line-height: 77px;
+      letter-spacing: 7px;
+    }
+
+    &-line {
+      margin-bottom: 85px;
+
+      @include tablet {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__media {
+    padding-left: 22px;
+
+    &-row {
+      margin-top: 16px;
+      display: flex;
+      gap: 17px;
+    }
+  }
+}
+
+.latest {
+  &__item {
+    display: flex;
+    gap: 53px;
+    background-color: $color-dark;
+    padding: 40px;
+    border-radius: $border-radius;
+
+    @include mobile {
+      text-align: center;
+
+      &:first-child {
+        background-image: url(./../images/latest/1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      &:nth-child(2) {
+        background-image: url(./../images/latest/2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      &:last-child {
+        background-image: url(./../images/latest/3.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__image {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__body {
+    padding-top: 100px;
+    padding-bottom: 160px;
+
+    @include desktop {
+      padding-top: 50px;
+      padding-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__list {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include mobile {
+      gap: 25px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 26px;
+    font-size: 64px;
+    line-height: 72px;
+    letter-spacing: 2.88px;
+
+    @include tablet {
+      font-size: 45px;
+      line-height: 50px;
+      padding-bottom: 40px;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  @include mobile {
+    font-size: 25px;
+    line-height: 28px;
+  }
+
+  &__info {
+    padding-top: 7.5px;
+    max-width: 778px;
+
+    @include mobile {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: $border-radius-medium;
+    }
+  }
+
+  &__span {
+    padding-inline: 16px;
+    background-color: $color-gray;
+    border-radius: $border-radius-small;
+  }
+
+  &__episode {
+    margin-top: 48px;
+    font-size: 17px;
+    line-height: 27px;
+    color: $color-accent;
+  }
+
+  &__subtitle {
+    margin-top: 17px;
+    max-width: 701px;
+    font-size: 64px;
+    line-height: 70px;
+    letter-spacing: 2.56px;
+
+    @include tablet {
+      margin-top: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__text {
+    margin-top: 28px;
+    font-size: 22px;
+    line-height: 33px;
+    opacity: 0.7;
+    max-width: 757px;
+
+    @include tablet {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.bio {
+  &__body {
+    margin-block: 100px;
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      margin-block: 0;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+
+  &__info {
+    margin-right: 60px;
+    max-width: 590px;
+
+    @include mobile {
+      margin-right: 0;
+    }
+  }
+
+  &__span {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-accent;
+  }
+
+  &__title {
+    font-size: 65px;
+    line-height: 80px;
+    letter-spacing: 3px;
+
+    @include desktop {
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+
+  &__toptext {
+    margin-top: 28px;
+    font-size: 22px;
+    line-height: 33px;
+    opacity: 0.7;
+
+    @include tablet {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  &__bottomtext {
+    margin-top: 33px;
+    font-size: 22px;
+    line-height: 33px;
+    opacity: 0.7;
+
+    @include tablet {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  &__image {
+    border-radius: $border-radius-medium;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      border-radius: $border-radius;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    border-radius: 50%;
+    background-color: #118da8;
+    cursor: pointer;
+    position: relative;
+    width: 112px;
+    height: 112px;
+
+    @include mobile {
+      display: none !important;
+    }
+  }
+}
+
+.bio__button span {
+  position: relative;
+  width: 80px;
+  height: 2px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  left: 20px;
+  display: block;
+
+  @include mobile {
+    display: none !important;
+  }
+}
+.bio__button span::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  top: -15px;
+  right: -5px;
+  background-color: #fff;
+  transform: rotate(45deg);
+
+  @include mobile {
+    display: none !important;
+  }
+}
+.bio__button span::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  top: 15px;
+  right: -5px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transform: rotate(-45deg);
+
+  @include mobile {
+    display: none !important;
+  }
+}
+.bio__button:hover {
+  animation: bio__button 1s linear infinite;
+
+  @include mobile {
+    display: none !important;
+  }
+}
+@keyframes bio__button {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 10px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.subscribe {
+  padding-block: 100px;
+
+  &__body {
+    position: relative;
+    padding: 60px 60px 75px 60px;
+    background-color: $color-dark;
+    border-radius: $border-radius;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-accent;
+  }
+
+  &__title {
+    max-width: 431px;
+    font-size: 72px;
+    line-height: 79px;
+    letter-spacing: 2.88px;
+
+    @include desktop {
+      font-size: 50px;
+      line-height: 60px;
+      max-width: 270px;
+    }
+
+    @include mobile-s {
+      max-width: unset;
+      font-size: 30px;
+      line-height: 58px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__placeholders {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__lines {
+    position: absolute;
+    left: -38px;
+    bottom: -26px;
+  }
+
+  .input {
+    padding-left: 19px;
+    border-radius: $border-radius-small;
+    height: $input-height;
+    width: 522px;
+    background-color: $color-gray;
+    font-size: 25px;
+
+    @include tablet {
+      width: 300px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .button {
+    // color: rgb(255, 255, 255, 0.7);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 29px;
+    padding-left: 19px;
+    width: 87px;
+    background-color: $color-accent;
+    transition: background-color 0.4s ease;
+
+    &:hover {
+      background-color: #004251;
+    }
+  }
+
+  ::placeholder {
+    font-size: 24px;
+    line-height: 29px;
+    opacity: 0.7;
+  }
+}
+
+.comment {
+  &__body {
+    padding-block: 100px;
+
+    @include tablet {
+      padding-block: 50px;
+    }
+
+    @include mobile {
+      padding-block: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__item {
+    padding-top: 54px;
+    padding-left: 50px;
+    width: 422px;
+    height: 321px;
+    background-color: $color-dark;
+    border-radius: $border-radius;
+
+    @include mobile {
+      padding-inline: 50px;
+      padding-bottom: 30px;
+      height: auto;
+    }
+  }
+
+  &__title {
+    margin-top: 21px;
+    max-width: 317px;
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  &__author {
+    margin-top: 19px;
+    font-size: 24px;
+    line-height: 29px;
+    opacity: 0.7;
+  }
+}
+
+.footer {
+  &__body {
+    display: flex;
+    padding-block: 100px;
+
+    @include tablet {
+      padding-block: 50px;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    @include mobile {
+      padding-block: 30px;
+    }
+  }
+
+  &__social {
+    margin-right: 240px;
+
+    @include desktop {
+      margin-right: 120px;
+    }
+
+    @include mobile {
+      margin-right: 50px;
+    }
+  }
+
+  &__social-row {
+    margin-top: 23px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__pages,
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 180px;
+  }
+
+  &__pages-link,
+  &__info-link {
+    color: $color-white;
+    font-size: 18px;
+    line-height: 27px;
+    transition: color 0.4s ease;
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__media {
+    display: flex;
+    align-items: start;
+    margin-left: 16px;
+    gap: 17px;
+  }
+}
